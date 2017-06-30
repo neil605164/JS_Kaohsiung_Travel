@@ -1,0 +1,212 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*header CSS樣式*/
+.wrap .header {
+	height: 360px;
+	/*background: lightblue;*/
+}
+.wrap .header .headerImg {
+	height: 300px;
+	background: url('../Images/Hero.png') top center;
+	background-size: cover;
+	text-align: center;
+}
+.wrap .header .headerImg .headerText {
+	color: white;
+	font-size: 30px;
+	letter-spacing: 6px;
+	line-height: 150px;
+}
+.wrap .header .headerImg .area {
+	width: 350px;
+	padding: 5px;
+	color: gray;
+	border-radius: 3px;
+	border: 2px solid white;
+	background: url('../Images/icons_down.png') no-repeat 320px center rgba(100%, 100%, 100%, 0.7);
+	/*隱藏下拉式選單的三角形（限定Chrome）ㄧ*/
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+.wrap .header .headerMenu {
+	top: -15px;
+	width: 600px;
+	margin: 0 auto;
+	background: white;
+	border-radius: 3px;
+	position: relative;
+	box-shadow: 2px 2px 2px rgba(20%,20%,40%,0.2);
+}
+.wrap .header .headerMenu p {
+	padding: 10px;
+	font-size: 14px;
+}
+.wrap .header .headerMenu input {
+	width: 100px;
+	border: 1px;
+	padding: 7px;
+	margin-left: 35px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+}
+.wrap .header .headerMenu input:hover {
+	box-shadow: 4px 4px 3px rgba(20%,20%,40%,0.2);
+}
+.wrap .header .headerMenu .headerBtn1 {
+	background: rgb(198,19,242);
+}
+.wrap .header .headerMenu .headerBtn2 {
+	background: rgb(237,176,20);
+}
+.wrap .header .headerMenu .headerBtn3 {
+	background: rgb(238,242,19);
+}
+.wrap .header .headerMenu .headerBtn4 {
+	background: rgb(19,209,242);
+}
+
+/*分割線 CSS 樣式*/
+.line-wrap {
+	position: relative;
+	padding: 0 30px;
+}
+.line {
+	height: 30px;
+	border-bottom: 2px dashed rgb(105,177,242);
+}
+.line-wrap .separationBtn{
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	right: 50%;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	display: inline-block;
+	border: 1px solid rgb(105,177,242);
+	background: url('../Images/icons_down.png')  no-repeat center #FFF;
+	background-size: 10px 10px;
+}
+.line-wrap .areaName {
+	color: #b583e6;
+	font-size: 28px;
+	padding: 15px;
+	margin-top: 10px;
+	text-align: center;
+}
+/*content CSS 樣式*/
+.content {
+	width:75%;
+	margin: 0 auto;
+}
+.content .areaMessage {
+	width: 450px;
+	height: 350px;
+	margin: 10px;
+	float: left;
+	border-radius: 3px;
+	box-shadow: 3px 3px 3px rgba(20%,20%,40%,0.4);
+}
+.content .areaMessage .areaIMg {
+	height: 200px;
+	background: url('http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960') top center;
+	background-size: cover;
+	position: relative;
+}
+.content .areaMessage .areaIMg .sightseeingName {
+	color: #FFF;
+	top: 150px;
+	padding: 10px;
+	font-size: 28px;
+	position: absolute;
+}
+.content .areaMessage .areaIMg .sightseeingAres {
+	color: #FFF;
+	top: 160px;
+	left: 365px;
+	padding: 10px;
+	font-size: 20px;
+	position: absolute;
+}
+.content .areaMessage .areaInfo {
+	padding: 20px;
+	position: relative;
+}
+.content .areaMessage .areaInfo ul li {
+	margin-bottom: 10px;
+}
+.content .areaMessage .areaInfo .iconsImg {
+	margin: 10px 1px 0 1px;
+	/*padding: 10px 1px 0 1px*/
+}
+.content .areaMessage .areaInfo span {
+	margin-left: 10px;
+}
+.content .areaMessage .areaInfo .areaFree {
+	position: absolute;
+	left: 330px;
+	bottom: 20px;
+}
+
+/*footer CSS樣式*/
+.footer {
+	padding: 20px;
+	clear: both;
+	text-align: center;
+	background: #2799cf;
+}
+.footer .footerP1 {
+	color: #FFF;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.footer .footerP2 {
+	color: #ecaf27;
+	margin-bottom: 15px;
+}

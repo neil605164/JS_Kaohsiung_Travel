@@ -45,11 +45,22 @@ function DataChange(jsonData) {
     // 將陣列重複的值移除
     kaoZone = Array.from( new Set(kaoZone) );
 
+    // 顯示下拉選單值
     ShowArea(kaoZone);
+
     // 3.對下拉選單做監控，若選取地區就出發事件 ，將結果顯示到下方的 Content內
-    document.addEventListener('change', function(){ShowResult(kaoZone, result)}, false);
+    var areaSelect = document.querySelector('.area');
+    areaSelect.addEventListener('change', function(){ShowResult(kaoZone, result)}, false);
 
     // 2.對按鈕進行監控，若觸發發選項就呼叫 API ，並印出結果
+    var headerBtn1 = document.querySelector('.headerBtn1');
+    headerBtn1.addEventListener('click', function(){ShowInfo(result, kaoZone, headerBtn1.value)}, false);
+    var headerBtn2 = document.querySelector('.headerBtn2');
+    headerBtn2.addEventListener('click', function(){ShowInfo(result, kaoZone, headerBtn2.value)}, false);
+    var headerBtn3 = document.querySelector('.headerBtn3');
+    headerBtn3.addEventListener('click', function(){ShowInfo(result, kaoZone, headerBtn3.value)}, false);
+    var headerBtn4 = document.querySelector('.headerBtn4');
+    headerBtn4.addEventListener('click', function(){ShowInfo(result, kaoZone, headerBtn4.value)}, false);
 }
 
 /*
@@ -74,8 +85,6 @@ function ShowArea(kaoZone) {
 
 /*
 * 顯示符合的結果在『content』底下
-*
-*
 */
 function ShowResult(kaoZone, result) {
     // 對下拉選單進行監控，並取的選選擇的值
@@ -84,11 +93,6 @@ function ShowResult(kaoZone, result) {
     // 更換分割線『地區』名稱
     AreaName(clickAtrea);
     ShowInfo(result, kaoZone, clickAtrea);
-    // console.log(clickAtrea);
-    // console.log(kaoZone);
-    // console.log(result);
-
-
 }
 
 /*
@@ -100,16 +104,13 @@ function AreaName(clickAtrea) {
 
 /*
 * 將結果顯示在content的區塊
-*
-*
 */
-function ShowInfo(result, kaoZone, clickAtrea) {
+function ShowInfo(result, kaoZone, value) {
     var innerContentStr = '';
 
     // 寫判斷式檢查取道的值是否存在在地區的陣列當中(雙重驗證比較安全
     for(var i=0; i<kaoZone.length; i++){
-        if( clickAtrea == result[i].Zone){
-            // console.log(result[i]);
+        if( value == result[i].Zone){
             innerContentStr +=
                 '<div class="areaMessage">'+
                 '<div class="areaIMg">'+
@@ -133,6 +134,7 @@ function ShowInfo(result, kaoZone, clickAtrea) {
     var AreaIMg = document.querySelectorAll('.areaIMg');
     for(var j=0; j<AreaIMg.length; j++){
         AreaIMg[j].style.background = "url("+result[j].Picture1+") top center";
+        AreaIMg[j].style.backgroundSize = "cover";
     }
 
 }

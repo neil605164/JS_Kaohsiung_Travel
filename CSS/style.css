@@ -147,7 +147,7 @@ table {
 }
 .content .areaMessage {
 	width: 450px;
-	height: 350px;
+	height: 400px;
 	margin: 10px;
 	float: left;
 	border-radius: 3px;
@@ -155,8 +155,6 @@ table {
 }
 .content .areaMessage .areaIMg {
 	height: 200px;
-	background: url('http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960') top center;
-	background-size: cover;
 	position: relative;
 }
 .content .areaMessage .areaIMg .sightseeingName {

@@ -11,7 +11,7 @@ window.addEventListener('load', GetData, false);
 function GetData() {
     var ishttps = 'https:' == document.location.protocol ? true: false;
     if(ishttps){
-        Script.src = '/home/hsieh/html/JS/JS_Kaohsiung_Travel/JSON/data.json';
+        DataChange(Script.src = '/home/hsieh/html/JS/JS_Kaohsiung_Travel/JSON/data.json');
     }else{
          APIConnect();
     }

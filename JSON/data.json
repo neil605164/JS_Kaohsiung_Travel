@@ -1,4 +1,4 @@
-var result = {
+{
 "help": "http://data.kcg.gov.tw/api/3/action/help_show?name=datastore_search",
 "success": true,
 "result": {

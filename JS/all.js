@@ -6,19 +6,10 @@
 
 // 0. 監聽頁面載入後，呼叫 API
 // 1. 顯示下拉是選單的選項
-window.addEventListener('load', GetData, false);
-
-function GetData() {
-    var ishttps = 'https:' == document.location.protocol ? true: false;
-    if(ishttps){
-        DataChange(Script.src = '/home/hsieh/html/JS/JS_Kaohsiung_Travel/JSON/data.json');
-    }else{
-         APIConnect();
-    }
-}
+window.addEventListener('load', APIConnect, false);
 
 function APIConnect() {
-    var API = 'http://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97';
+    var API = 'https://github.com/neil605164/JS_Kaohsiung_Travel/blob/master/JSON/data.json';
 
     // 取 API 資料，並轉換資料型態為 Json
     var xhttp = new XMLHttpRequest();

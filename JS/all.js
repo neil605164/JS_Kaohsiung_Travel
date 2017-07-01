@@ -15,10 +15,14 @@ function API_Connect() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            var ishttps = 'https:' == document.location.protocol ? true: false;
+
+            if(ishttps){
+                alert("这是一个https请求");
+            }else{
+                alert("这是一个http请求");
+            }
             DataChange(this.responseText);
-        }
-        if(this.status == 400){
-            alert('API呼叫錯誤'+this.status+','+this.readyState);
         }
     };
     xhttp.open("GET", API, true);
@@ -107,7 +111,7 @@ function AreaName(clickAtrea) {
 */
 function ShowInfo(result, kaoZone, value) {
     var innerContentStr = '';
-
+    // console.log(value);
     // 寫判斷式檢查取道的值是否存在在地區的陣列當中(雙重驗證比較安全
     for(var i=0; i<kaoZone.length; i++){
         if( value == result[i].Zone){

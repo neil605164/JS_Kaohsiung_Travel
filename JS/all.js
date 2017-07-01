@@ -9,7 +9,7 @@
 window.addEventListener('load', APIConnect, false);
 
 function APIConnect() {
-    var API = 'https://github.com/neil605164/JS_Kaohsiung_Travel/blob/master/JSON/data.json';
+    var API = 'https://raw.githubusercontent.com/neil605164/JS_Kaohsiung_Travel/master/JSON/data.json';
 
     // 取 API 資料，並轉換資料型態為 Json
     var xhttp = new XMLHttpRequest();

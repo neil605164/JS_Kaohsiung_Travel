@@ -23,7 +23,6 @@ function APIConnect() {
     xhttp.send();
 };
 
-
 /*
 *
 * 將 API 資料轉換成 JSON + 呼叫顯示『下拉是選單的選項』的function

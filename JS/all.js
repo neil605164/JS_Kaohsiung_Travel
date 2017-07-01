@@ -125,11 +125,11 @@ function ShowInfo(result, kaoZone, value) {
             '<p class="sightseeingAres">'+matchResult[j].Zone+'</p>'+
             '</div>'+
             '<div class="areaInfo">'+
-            '<ul><li><img src="../Images/icons_clock.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingMsg">'+matchResult[j].Opentime+'</span></li>'+
-            '<li><img src="../Images/icons_pin.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingAddr">'+matchResult[j].Add+'</span></li>'+
-            '<li><img src="../Images/icons_phone.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTel">'+matchResult[j].Tel+'</span></li></ul>'+
+            '<ul><li><img src="Images/icons_clock.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingMsg">'+matchResult[j].Opentime+'</span></li>'+
+            '<li><img src="Images/icons_pin.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingAddr">'+matchResult[j].Add+'</span></li>'+
+            '<li><img src="Images/icons_phone.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTel">'+matchResult[j].Tel+'</span></li></ul>'+
             '<div class="areaFree">'+
-            '<ul><li><img src="../Images/icons_tag.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTag">'+matchResult[j].Ticketinfo+'</span></li></ul>'+
+            '<ul><li><img src="Images/icons_tag.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTag">'+matchResult[j].Ticketinfo+'</span></li></ul>'+
             '</div></div></div>';
 
         // 選取 innerContent 標籤 + 增加 html tag

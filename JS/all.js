@@ -97,16 +97,16 @@ function ShowResult(kaoZone, result) {
     // 對下拉選單進行監控，並取的選選擇的值
     var chooseResult = document.querySelector('.area');
     var clickAtrea = chooseResult.options[chooseResult.selectedIndex].text;
-    // 更換分割線『地區』名稱
-    AreaName(clickAtrea);
+
+    // 呼叫結果並顯示
     ShowInfo(result, kaoZone, clickAtrea);
 }
 
 /*
 * 更換分割線『地區』名稱
 */
-function AreaName(clickAtrea) {
-    document.querySelector('.areaName').textContent = clickAtrea;
+function AreaName(value) {
+    document.querySelector('.areaName').textContent = value;
 }
 
 /*
@@ -114,34 +114,43 @@ function AreaName(clickAtrea) {
 */
 function ShowInfo(result, kaoZone, value) {
     var innerContentStr = '';
-    // console.log(value);
-    // 寫判斷式檢查取道的值是否存在在地區的陣列當中(雙重驗證比較安全
-    for(var i=0; i<kaoZone.length; i++){
-        if( value == result[i].Zone){
-            innerContentStr +=
-                '<div class="areaMessage">'+
-                '<div class="areaIMg">'+
-                '<p class="sightseeingName">'+result[i].Name+'</p>'+
-                '<p class="sightseeingAres">'+result[i].Zone+'</p>'+
-                '</div>'+
-                '<div class="areaInfo">'+
-                '<ul><li><img src="../Images/icons_clock.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingMsg">'+result[i].Opentime+'</span></li>'+
-                '<li><img src="../Images/icons_pin.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingAddr">'+result[i].Add+'</span></li>'+
-                '<li><img src="../Images/icons_phone.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTel">'+result[i].Tel+'</span></li></ul>'+
-                '<div class="areaFree">'+
-                '<ul><li><img src="../Images/icons_tag.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTag">'+result[i].Ticketinfo+'</span></li></ul>'+
-                '</div></div></div>';
+    var matchResult = [];
 
-            // 選取 innerContent 標籤 + 增加 html tag
-            var innerContent = document.querySelector('.innerContent');
-            innerContent.innerHTML = innerContentStr;
+    // 更換分割線『地區』名稱
+    AreaName(value);
+
+    // 檢查選取的值，是否存在於 result 的 data 中，若存在就將該筆資料丟入陣列
+    for(var i=0; i<result.length; i++){
+        if( value == result[i].Zone){
+            matchResult.push(result[i]);
         }
     }
 
+    // 印出相符合的資料結果
+    for(var j=0; j<matchResult.length; j++){
+        innerContentStr +=
+            '<div class="areaMessage">'+
+            '<div class="areaIMg">'+
+            '<p class="sightseeingName">'+matchResult[j].Name+'</p>'+
+            '<p class="sightseeingAres">'+matchResult[j].Zone+'</p>'+
+            '</div>'+
+            '<div class="areaInfo">'+
+            '<ul><li><img src="../Images/icons_clock.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingMsg">'+matchResult[j].Opentime+'</span></li>'+
+            '<li><img src="../Images/icons_pin.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingAddr">'+matchResult[j].Add+'</span></li>'+
+            '<li><img src="../Images/icons_phone.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTel">'+matchResult[j].Tel+'</span></li></ul>'+
+            '<div class="areaFree">'+
+            '<ul><li><img src="../Images/icons_tag.png" alt="圖片不存在" class="iconsImg"><span class="sightseeingTag">'+matchResult[j].Ticketinfo+'</span></li></ul>'+
+            '</div></div></div>';
+
+        // 選取 innerContent 標籤 + 增加 html tag
+        var innerContent = document.querySelector('.innerContent');
+        innerContent.innerHTML = innerContentStr;
+    }
+
     var AreaIMg = document.querySelectorAll('.areaIMg');
-    for(var j=0; j<AreaIMg.length; j++){
-        AreaIMg[j].style.background = "url("+result[j].Picture1+") top center";
-        AreaIMg[j].style.backgroundSize = "cover";
+    for(var k=0; k<AreaIMg.length; k++){
+        AreaIMg[k].style.background = "url("+matchResult[k].Picture1+") top center";
+        AreaIMg[k].style.backgroundSize = "cover";
     }
 
 }

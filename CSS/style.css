@@ -46,6 +46,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.warp {
+	width: 100%;
+}
 /*header CSS樣式*/
 .wrap .header {
 	height: 360px;
@@ -64,19 +67,19 @@ table {
 	line-height: 150px;
 }
 .wrap .header .headerImg .area {
-	width: 350px;
+	width: 20%;
 	padding: 5px;
 	color: gray;
 	border-radius: 3px;
 	border: 2px solid white;
-	background: url('../Images/icons_down.png') no-repeat 320px center rgba(100%, 100%, 100%, 0.7);
+	background: url('../Images/icons_down.png') no-repeat 98% center rgba(100%, 100%, 100%, 0.7);
 	/*隱藏下拉式選單的三角形（限定Chrome）ㄧ*/
 	-moz-appearance: none;
 	-webkit-appearance: none;
 }
 .wrap .header .headerMenu {
 	top: -15px;
-	width: 600px;
+	max-width: 600px;
 	margin: 0 auto;
 	background: white;
 	border-radius: 3px;
@@ -88,10 +91,10 @@ table {
 	font-size: 14px;
 }
 .wrap .header .headerMenu input {
-	width: 100px;
+	width: 20%;
 	border: 1px;
 	padding: 7px;
-	margin-left: 35px;
+	margin-left: 20px;
 	margin-bottom: 10px;
 	border-radius: 3px;
 }
@@ -146,7 +149,7 @@ table {
 	margin: 0 auto;
 }
 .content .areaMessage {
-	width: 450px;
+	width: 30%;
 	height: 400px;
 	margin: 10px;
 	float: left;
@@ -167,7 +170,7 @@ table {
 .content .areaMessage .areaIMg .sightseeingAres {
 	color: #FFF;
 	top: 160px;
-	left: 365px;
+	left: 80%;
 	padding: 10px;
 	font-size: 20px;
 	position: absolute;
@@ -188,7 +191,8 @@ table {
 }
 .content .areaMessage .areaInfo .areaFree {
 	position: absolute;
-	left: 330px;
+	top: 85%;
+	left: 70%;
 	bottom: 20px;
 }
 
